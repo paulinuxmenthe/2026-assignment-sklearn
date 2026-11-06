@@ -95,7 +95,7 @@ import pandas as pd
 import numpy as np
 from pandas.api.types import is_datetime64_any_dtype
 from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder, StandardScaler
@@ -230,7 +230,7 @@ def get_estimator():
 
     return Pipeline([
         ("preprocessor", preprocessor),
-        ("classifier", GradientBoostingClassifier(random_state=0)),
+        ("classifier", LogisticRegression(random_state=0)),
     ])
 
 
